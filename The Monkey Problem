@@ -1,0 +1,63 @@
+# include <stdio.h>
+# include <string.h>
+
+#define Num_monkeys 2
+#define Num_days 2
+#define num_meals 2
+#define max_meal_length 50
+
+
+char mealsreport [Num_monkeys][Num_days][num_meals][max_meal_length];
+
+void inputMeals (){
+    
+    for(int monkey =0; monkey < Num_monkeys; monkey++){
+    printf("\n Enter the meals for monkey %d: ",monkey +1);
+
+     for(int days = 0; days < Num_days; days++){
+         printf(" \n DAY %d:" ,days+1 );
+
+         for(int meal = 0; meal<num_meals; meal++ ){
+
+            printf("\n  MEAL: %d:" , meal +1);
+
+
+            fgets(mealsreport[monkey][days][meal], max_meal_length, stdin);
+            mealsreport[monkey][days][meal][strcspn(mealsreport[monkey][days][meal], "\n")] = '\0';
+
+         }
+
+     }
+
+}
+
+}
+
+int main(){
+
+
+inputMeals ();
+
+printf("\n Entering complete!! \n");
+
+printf("   \n  WEEKLY MEAL REPORT!!!     \n __________________________");
+
+
+for(int monkey = 0; monkey <Num_monkeys; monkey ++){
+    printf("\n --------------\n Monkey %d:\n--------------", monkey+1);
+
+    for(int days = 0; days <Num_days; days ++){
+        printf("\n Day %d: ", days + 1);
+    
+
+        for(int meal = 0; meal <num_meals; meal ++){
+
+            printf(" \n   Meal %d: %s\n", meal + 1, mealsreport[monkey][days][meal]);
+        }
+
+    }
+}
+
+
+    return 0;
+}
