@@ -1,0 +1,202 @@
+// #include <stdio.h>
+
+// int main(){
+
+//     char studentName[5][20]; //5 students, each name <20
+//     float grade [5];
+//     int x; //loop counter
+//     for(x = 0; x<5; x++){
+//         printf("Enter name: ");
+//         scanf("%s", studentName[x]);
+//         printf("Enter grade: ");
+//         scanf("%f", &grade[x]);
+//     }
+
+//     for(x=0; x<5; x++){
+//         printf("%s - %f\n", studentName [x], grade[x]);
+//     }
+
+//     return 0;
+// }
+
+
+
+
+
+
+// #include <stdio.h>
+
+// int main(){
+
+//     char monkey_name[3][20]; //5 monkeys, each name <20
+//     char grade [5][20];
+//     int x; //loop counter
+//     for(x = 0; x<3; x++){
+//         printf("Enter name: ");
+//         scanf("%s", monkey_name[x]);
+//         printf("Enter grade: ");
+//         scanf("%s", grade[x]);
+//     }
+
+//     for(x=0; x<5; x++){
+//         printf("%s - %s\n", monkey_name [x], grade[x]);
+//     }
+
+//     return 0;
+// }
+
+
+
+
+
+// #include <stdio.h>
+
+// int main(){
+
+//     char day_num[3][20]; //5 monkeys, each name <20
+//     char food [5][20];
+//     int x; //loop counter
+   
+//     for(int monkey = 0; monkey < 3; monkey++){
+//        printf("Monkey %d", monkey+1);
+
+//         for(int day = 0; day<7; day++){
+//         printf("\nDay: %d: ", day+1);
+//         scanf("\n%s", food[x]);
+
+//     }
+
+//     }
+
+//     printf("-----------------Data Entry Complete----------\n\n\n");
+
+//     // for(x=0; x<5; x++){
+//     //     printf("%s - %s\n", food [x], food[x]);
+//     // }
+
+//         for(int monkey = 0; monkey < 3; monkey++){
+//        printf("Monkey %d", monkey+1);
+
+//         for(int day = 0; day<7; day++){
+
+//         printf("\n Day: %d: %s ", day+1, food[x]);
+    
+
+//     }
+
+//     }
+
+//     return 0;
+// }
+
+// #include <stdio.h>
+
+// int main(){
+
+// char food [3][7][20];
+
+
+// for(int monkey_num = 0; monkey_num < 3; monkey_num++){
+//     printf("\nMonkey %d\n", monkey_num+1);
+
+//     for(int day = 0; day <7; day++){
+//         printf("\nDay %d: ", day+1);
+//         scanf("Meal: %s", food[monkey_num][day]);
+//     }
+// }
+
+//     printf("\nData Entry Complete:\n");
+//     for(int monkey_num = 0; monkey_num < 3; monkey_num++) {
+//         printf("Monkey %d\n", monkey_num + 1);
+
+//         for(int day = 0; day < 7; day++) {
+//             printf("Day %d: %s\n", day + 1, food[monkey_num][day]);
+//         }
+//     }
+//     return 0;
+// }
+
+
+
+
+// #include <stdio.h>
+
+// int main(){
+
+//     char food[3][7][20];
+
+//     for(int monkey_num = 0; monkey_num<3; monkey_num++){
+//         printf("Monkey %d\n", monkey_num+1);
+
+//         for(int day =0; day<7; day++){
+//             printf("Day %d: ", day+1);
+//             scanf("%s", food[monkey_num][day]);
+//         }
+
+//     }
+
+
+//     //Print Report
+
+//     printf("---------------DATA ENTRY COMPLETE----------------\n");
+
+//     printf("\n \n---------------WEEKLY REPORT----------------\n");
+    
+//     for(int monkey_num =0; monkey_num<3; monkey_num++){
+//         printf("Monkey %d\n", monkey_num+1);
+
+//         for(int day =0; day <7; day++){
+//             printf("Day %d: %s\n", day +1, food[monkey_num][day]);
+//         }
+//     }
+
+//     return 0;
+// }
+
+
+
+
+#include <stdio.h>
+
+int main(){
+
+    char food[3][7][3][20]; //3 monkeys, 7 days, 3 meals
+
+    for(int monkey_num = 0; monkey_num<3; monkey_num++){
+        printf("\n MONKEY %d\n \n", monkey_num+1);
+
+        for(int day =0; day<7; day++){
+            printf("\n Day %d:", day+1);
+
+            for(int meal=0; meal<3; meal++){
+                printf("\n  Meal %d: ", meal+1);
+
+                scanf("%s", food[monkey_num][day][meal]);
+            }
+            
+        }
+
+    }
+
+
+    //Print Report
+
+    printf("---------------DATA ENTRY COMPLETE----------------\n");
+
+    printf("\n \n---------------WEEKLY REPORT----------------\n");
+    
+    for(int monkey_num =0; monkey_num<3; monkey_num++){
+        printf("\nMONKEY %d\n \n", monkey_num+1);
+
+        for(int day =0; day <7; day++){
+            printf("  Day %d:\n", day +1);
+            
+            for(int meal =0; meal<3; meal++){
+                printf("   Meal %d: %s\n", meal+1, food[monkey_num][day][meal]);
+
+            }
+        }
+    }
+
+    return 0;
+}
