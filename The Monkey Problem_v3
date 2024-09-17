@@ -1,0 +1,55 @@
+#include <stdio.h>
+
+int main() {
+    // Define the days of the week
+    const char* days_of_week[7] = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+    
+    // Define the names of the monkeys
+    const char* monkey_names[3] = {"Java", "Script", "Python"};
+
+    // Define the meal_calorie array for 7 days, 3 meals
+    int meal_calorie[7][3][3];  // 7 days, 3 meals, 3 monkeys
+
+    // Input data
+    for (int day = 0; day < 7; day++) {
+        printf("\n %s:\n", days_of_week[day]);
+
+        for (int meal = 0; meal < 3; meal++) {
+            printf("  Meal %d:\n", meal + 1);
+
+            for (int monkey_num = 0; monkey_num < 3; monkey_num++) {
+                printf("   %s: Enter calorie count: ", monkey_names[monkey_num]);
+                scanf("%d", &meal_calorie[day][meal][monkey_num]);
+            }
+        }
+    }
+
+    // Calculate and print total calories per day for each monkey
+    int total_calories[7][3] = {0};  // Total calories per day for each monkey
+
+    // Calculate total calories per day for each monkey
+    for (int day = 0; day < 7; day++) {
+        for (int meal = 0; meal < 3; meal++) {
+            for (int monkey_num = 0; monkey_num < 3; monkey_num++) {
+                total_calories[day][monkey_num] += meal_calorie[day][meal][monkey_num];
+            }
+        }
+    }
+
+    // Print total calories table
+    printf("\n---------------DAILY TOTAL CALORIES----------------\n");
+    printf("\n%-10s %-8s %-8s %-8s %-8s %-8s %-8s %-8s\n", "Monkey", days_of_week[0], days_of_week[1], days_of_week[2], days_of_week[3], days_of_week[4], days_of_week[5], days_of_week[6]);
+    printf("----------------------------------------------------------------------------------------\n");
+
+    // Print daily totals for each monkey
+    for (int monkey_num = 0; monkey_num < 3; monkey_num++) {
+        printf("%-10s", monkey_names[monkey_num]);  // Print the monkey's name
+
+        for (int day = 0; day < 7; day++) {
+            printf(" %-8d", total_calories[day][monkey_num]); // Print total calorie count per day
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
